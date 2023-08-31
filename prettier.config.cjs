@@ -5,7 +5,6 @@ const config = {
   embeddedLanguageFormatting: 'off',
   endOfLine: 'lf',
   htmlWhitespaceSensitivity: 'ignore',
-  jsxBracketSameLine: false,
   jsxSingleQuote: true,
   parser: 'typescript',
   proseWrap: 'preserve',
