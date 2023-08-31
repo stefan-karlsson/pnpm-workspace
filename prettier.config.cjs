@@ -6,7 +6,6 @@ const config = {
   endOfLine: 'lf',
   htmlWhitespaceSensitivity: 'ignore',
   jsxSingleQuote: true,
-  parser: 'typescript',
   proseWrap: 'preserve',
   quoteProps: 'as-needed',
   semi: true,
