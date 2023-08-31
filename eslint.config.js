@@ -159,7 +159,6 @@ export default [
       '**/.vscode/',
       '**/.husky/',
       '**/coverage/**',
-      '**/public/**',
       '**/dist/**',
       '**/pnpm-lock.yaml',
       '**/pnpm-workspace.yaml'
