@@ -63,15 +63,18 @@ export const overrideAll = {
   '@typescript-eslint/indent': ['error', 2],
   '@typescript-eslint/no-non-null-assertion': 'error',
   // ts itself checks and ignores those starting with _, align the linting
-  '@typescript-eslint/no-unused-vars': ['error', {
-    args: 'all',
-    argsIgnorePattern: '^_',
-    caughtErrors: 'all',
-    caughtErrorsIgnorePattern: '^_',
-    destructuredArrayIgnorePattern: '^_',
-    vars: 'all',
-    varsIgnorePattern: '^_'
-  }],
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    {
+      args: 'all',
+      argsIgnorePattern: '^_',
+      caughtErrors: 'all',
+      caughtErrorsIgnorePattern: '^_',
+      destructuredArrayIgnorePattern: '^_',
+      vars: 'all',
+      varsIgnorePattern: '^_'
+    }
+  ],
   '@typescript-eslint/prefer-nullish-coalescing': 'error',
   '@typescript-eslint/type-annotation-spacing': 'error',
   'arrow-parens': ['error', 'always'],
@@ -80,24 +83,35 @@ export const overrideAll = {
   'default-param-last': 'off', // conflicts with TS version
   'deprecation/deprecation': 'error',
   'dot-notation': 'off', // conflicts with TS version
-  'func-style': ['error', 'declaration', {
-    allowArrowFunctions: true
-  }],
+  'func-style': [
+    'error',
+    'declaration',
+    {
+      allowArrowFunctions: true
+    }
+  ],
   'function-call-argument-newline': ['error', 'consistent'],
-  'import-newlines/enforce': ['error', {
-    forceSingleLine: true,
-    items: 2048
-  }],
+  'import-newlines/enforce': [
+    'error',
+    {
+      forceSingleLine: true,
+      items: 2048
+    }
+  ],
   'import/export': 'error',
-  'import/extensions': ['error', 'ignorePackages', {
-    cjs: 'always',
-    js: 'always',
-    json: 'always',
-    jsx: 'never',
-    mjs: 'always',
-    ts: 'never',
-    tsx: 'never'
-  }],
+  'import/extensions': [
+    'error',
+    'ignorePackages',
+    {
+      cjs: 'always',
+      js: 'always',
+      json: 'always',
+      jsx: 'never',
+      mjs: 'always',
+      ts: 'never',
+      tsx: 'never'
+    }
+  ],
   'import/first': 'error',
   'import/newline-after-import': 'error',
   'import/no-duplicates': 'error',
@@ -106,15 +120,22 @@ export const overrideAll = {
   'no-extra-semi': 'error',
   'no-unused-vars': 'off',
   'no-use-before-define': 'off',
-  'object-curly-newline': ['error', {
-    ExportDeclaration: { minProperties: 2048 },
-    ImportDeclaration: { minProperties: 2048 },
-    ObjectPattern: { minProperties: 2048 }
-  }],
+  'object-curly-newline': [
+    'error',
+    {
+      ExportDeclaration: { minProperties: 2048 },
+      ImportDeclaration: { minProperties: 2048 },
+      ObjectPattern: { minProperties: 2048 }
+    }
+  ],
   'padding-line-between-statements': [
     'error',
     { blankLine: 'always', next: '*', prev: ['const', 'let', 'var'] },
-    { blankLine: 'any', next: ['const', 'let', 'var'], prev: ['const', 'let', 'var'] },
+    {
+      blankLine: 'any',
+      next: ['const', 'let', 'var'],
+      prev: ['const', 'let', 'var']
+    },
     { blankLine: 'always', next: 'block-like', prev: '*' },
     { blankLine: 'always', next: '*', prev: 'block-like' },
     { blankLine: 'always', next: 'function', prev: '*' },
@@ -128,27 +149,43 @@ export const overrideAll = {
   ],
   semi: ['error', 'always'],
   'simple-import-sort/exports': 'error',
-  'simple-import-sort/imports': ['error', {
-    groups: [
-      ['^\u0000'],
-      ['^[^/\\.]'],
-      ['^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'] // local (. last)
-    ]
-  }],
-  'sort-destructure-keys/sort-destructure-keys': ['error', {
-    caseSensitive: true
-  }],
-  'sort-keys': 'error',
-  'spaced-comment': ['error', 'always', {
-    block: {
-      // pure export helpers
-      markers: ['#__PURE__']
-    },
-    line: {
-      // TS reference types
-      markers: ['/ <reference']
+  'simple-import-sort/imports': [
+    'error',
+    {
+      groups: [
+        ['^\u0000'],
+        ['^[^/\\.]'],
+        [
+          '^\\.\\.(?!/?$)',
+          '^\\.\\./?$',
+          '^\\./(?=.*/)(?!/?$)',
+          '^\\.(?!/?$)',
+          '^\\./?$'
+        ] // local (. last)
+      ]
     }
-  }]
+  ],
+  'sort-destructure-keys/sort-destructure-keys': [
+    'error',
+    {
+      caseSensitive: true
+    }
+  ],
+  'sort-keys': 'error',
+  'spaced-comment': [
+    'error',
+    'always',
+    {
+      block: {
+        // pure export helpers
+        markers: ['#__PURE__']
+      },
+      line: {
+        // TS reference types
+        markers: ['/ <reference']
+      }
+    }
+  ]
 };
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
@@ -230,10 +267,7 @@ export default [
     }
   },
   {
-    files: [
-      '**/*.test.ts',
-      '**/*.spec.ts'
-    ],
+    files: ['**/*.test.ts', '**/*.spec.ts'],
     languageOptions: {
       globals: {
         ...vitestPlugin.environments.env.globals
@@ -241,7 +275,6 @@ export default [
     },
     plugins: {
       vitest: vitestPlugin
-
     },
     rules: {
       ...vitestPlugin.configs.recommended.rules,

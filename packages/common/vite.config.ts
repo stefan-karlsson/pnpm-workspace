@@ -10,8 +10,10 @@ export default defineConfig({
       formats: ['es', 'cjs']
     }
   },
-  plugins: [dts({
-    rollupTypes: true
-  })],
+  plugins: [
+    dts({
+      rollupTypes: true
+    })
+  ],
   resolve: { alias: { src: resolve('src/') } }
 });
