@@ -38,7 +38,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sort-destructure-keys": "^1.5.0",
-    "eslint-plugin-vitest": "^0.2.8",
+    "eslint-plugin-vitest": "^0.3.26",
     "espree": "^9.6.1",
     "globals": "^13.21.0",
     "husky": "^8",
